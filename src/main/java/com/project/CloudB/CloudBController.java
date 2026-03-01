@@ -9,6 +9,6 @@ public class CloudBController {
     @GetMapping("/")
     public String cloudB()
     {
-        return "Hello V";
+        return "Hello V  ";
     }
 }
