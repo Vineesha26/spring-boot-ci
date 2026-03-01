@@ -37,11 +37,11 @@ jobs:
     - name: SSH and Deploy to EC2
       uses: appleboy/ssh-action@v1
       with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_SSH_KEY }}
-          script: |
-            docker stop spring-b || true
-            docker rm spring-b || true
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/spring-boot-cloudb:latest
-            docker run -d --name spring-b -p 8080:8080 ${{ secrets.DOCKERHUB_USERNAME }}/spring-boot-cloudb:latest
+        host: ${{ secrets.EC2_HOST }}
+        username: ${{ secrets.EC2_USER }}
+        key: ${{ secrets.EC2_SSH_KEY }}
+        script: |
+          docker stop spring-b || true
+          docker rm spring-b || true
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/spring-boot-cloudb:latest
+          docker run -d --name spring-b -p 8080:8080 ${{ secrets.DOCKERHUB_USERNAME }}/spring-boot-cloudb:latest
